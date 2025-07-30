@@ -8,27 +8,40 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
 <body>
+    <!-- Cursor Effect -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Loading Animation -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Loading</div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <div class="logo">Edward Iyanda</div>
+                <div class="logo" data-aos="fade-down">Edward Iyanda</div>
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" class="nav-link" data-aos="fade-down" data-aos-delay="100">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-aos="fade-down" data-aos-delay="150">About</a></li>
+                    <li><a href="#skills" class="nav-link" data-aos="fade-down" data-aos-delay="200">Skills</a></li>
+                    <li><a href="#projects" class="nav-link" data-aos="fade-down" data-aos-delay="250">Projects</a></li>
+                    <li><a href="#contact" class="nav-link" data-aos="fade-down" data-aos-delay="300">Contact</a></li>
                 </ul>
                 <div style="display: flex; align-items: center; gap: 1rem;">
-                    <button class="theme-toggle" onclick="toggleTheme()">
-                        <i class="fas fa-moon"></i>
+                    <button class="theme-toggle"  onclick="toggleTheme()" data-aos="fade-down" data-aos-delay="350">
+                        <i class="fas fa-moon" style="display: none;"></i>
                     </button>
-                    <button class="mobile-menu" onclick="toggleMenu()">
+                    <button class="mobile-menu" onclick="toggleMenu()" data-aos="fade-down" data-aos-delay="350">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -38,28 +51,50 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-particles" id="particles-js"></div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Hi, I'm Edward Iyanda</h1>
-                    <p>Software Engineering Student & Developer passionate about building scalable, user-focused applications from Ibadan, Nigeria.</p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">
+                    <h1 class="hero-title" data-aos="fade-up">Hi, I'm <span class="text-gradient">Edward Iyanda</span></h1>
+                    <div class="typewriter" data-aos="fade-up" data-aos-delay="200">
+                        <span class="typed-text"></span>
+                        <span class="cursor-blink">|</span>
+                    </div>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">Software Engineering Student & Developer passionate about building scalable, user-focused applications from Ibadan, Nigeria.</p>
+                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                        <a href="#projects" class="btn btn-primary btn-icon">
                             <i class="fas fa-code"></i>
                             View Projects
                         </a>
-                        <a href="#contact" class="btn btn-outline">
+                        <a href="#contact" class="btn btn-outline btn-icon">
                             <i class="fas fa-envelope"></i>
                             Get In Touch
                         </a>
                     </div>
-                </div>
-                <div class="hero-image">
-                    <div class="profile-image">
-                        <!-- <i class="fas fa-user"></i> -->
-                        <img src="./img/img.png" alt="Edward Iyanda" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    <div class="hero-social" data-aos="fade-up" data-aos-delay="500">
+                        <span>Follow me:</span>
+                        <div class="social-icons">
+                            <a href="https://github.com/edwardiyanda1" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/edwardiyanda" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                        </div>
                     </div>
                 </div>
+                <div class="hero-image" data-aos="fade-left">
+                    <div class="profile-image">
+                        <div class="image-wrapper">
+                            <img src="./img/img.png" alt="Edward Iyanda">
+                        </div>
+                        <div class="image-border"></div>
+                        <div class="image-dots"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down" data-aos="fade-up" data-aos-delay="600">
+            <span>Scroll down</span>
+            <div class="mouse">
+                <div class="wheel"></div>
             </div>
         </div>
     </section>
@@ -67,27 +102,62 @@
     <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">About Me</h2>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Get to know me</span>
+                <br><h2 class="section-title">About Me</h2>
+            </div>
             <div class="about-content">
-                <div class="about-image fade-in">
-                    <!-- <i class="fas fa-user-graduate"></i> -->
-                    <img src="./img/img.png" alt="Edward Iyanda" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="about-image" data-aos="fade-right">
+                    <div class="image-container">
+                        <img src="./img/img.png" alt="Edward Iyanda">
+                        <div class="image-overlay"></div>
+                        <div class="image-shape"></div>
+                    </div>
                 </div>
-                <div class="about-text fade-in">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Edward Mofifoluwa Iyanda</h3>
-                    <p style="margin-bottom: 1.5rem;">
-                        I'm a dedicated software engineering student at Lead City University, passionate about building scalable, user-focused applications. I enjoy working on full-stack projects and have hands-on experience with Python, HTML5, CSS3, JavaScript, React, and Django.
-                    </p>
-                    <p style="margin-bottom: 1.5rem;">
-                        I grew up learning both Yoruba and English, and my background has shaped my unique problem-solving mindset. I love collaborating with people on impactful ideas, especially those that empower small businesses.
-                    </p>
-                    <p>
-                        Currently exploring backend development, Firebase integration, and machine learning to expand my technical expertise and create more innovative solutions.
-                    </p>
-                    <div style="margin-top: 2rem;">
-                        <a href="#" class="btn btn-primary">
+                <div class="about-text" data-aos="fade-left">
+                    <h3>Edward Mofifoluwa Iyanda</h3>
+                    <div class="about-tabs">
+                        <button class="tab-btn active" data-tab="about">About</button>
+                        <button class="tab-btn" data-tab="experience">Experience</button>
+                        <button class="tab-btn" data-tab="education">Education</button>
+                    </div>
+                    <div class="tab-content active" data-tab="about">
+                        <p>I'm a dedicated software engineering student at Lead City University, passionate about building scalable, user-focused applications. I enjoy working on full-stack projects and have hands-on experience with Python, HTML5, CSS3, JavaScript, and Django.</p>
+                        <p>I grew up learning both Yoruba and English, and my background has shaped my unique problem-solving mindset. I love collaborating with people on impactful ideas, especially those that empower small businesses.</p>
+                        <p>Currently exploring backend development, Firebase integration, and machine learning to expand my technical expertise and create more innovative solutions.</p>
+                    </div>
+                    <div class="tab-content" data-tab="experience">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4>Freelance Developer</h4>
+                                <span>2022 - Present</span>
+                                <p>Built custom web applications for small businesses and startups, focusing on e-commerce solutions and business automation.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Lead City University Tech Club</h4>
+                                <span>2024 - Present</span>
+                                <p>Collaborated on university projects and organized coding workshops for fellow students.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" data-tab="education">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4>B.Sc. Software Engineering</h4>
+                                <span>Lead City University</span>
+                                <span>Oct. 2024 - Dec. 2028</span>
+                                <p>Specializing in full-stack development and software architecture.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-cta">
+                        <a href="#" class="btn btn-primary btn-icon">
                             <i class="fas fa-download"></i>
                             Download CV
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-paper-plane"></i>
+                            Hire Me
                         </a>
                     </div>
                 </div>
@@ -96,41 +166,96 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section" style="background: var(--bg-light);">
+    <section id="skills" class="section bg-light">
         <div class="container">
-            <h2 class="section-title fade-in">Skills & Technologies</h2>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">What I know</span>
+                <h2 class="section-title">Skills & Technologies</h2>
+                
+            </div>
             <div class="skills-grid">
-                <div class="skill-category fade-in">
-                    <h3><i class="fas fa-code"></i> Languages</h3>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Languages</h3>
+                    </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
+                        <div class="skill-tag">
+                            <span>Python</span>
+                            <div class="skill-progress" data-level="85"></div>
+                        </div>
+                        <div class="skill-tag">
+                            <span>JavaScript</span>
+                            <div class="skill-progress" data-level="80"></div>
+                        </div>
+                        <div class="skill-tag">
+                            <span>HTML5</span>
+                            <div class="skill-progress" data-level="90"></div>
+                        </div>
+                        <div class="skill-tag">
+                            <span>CSS3</span>
+                            <div class="skill-progress" data-level="85"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-category fade-in">
-                    <h3><i class="fas fa-layer-group"></i> Frameworks</h3>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-header">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Frameworks</h3>
+                    </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">React.js</span>
-                        <span class="skill-tag">Django</span>
-                        <span class="skill-tag">Node.js</span>
+                        <!-- <div class="skill-tag">
+                            <span>React.js</span>
+                            <div class="skill-progress" data-level="75"></div>
+                        </div> -->
+                        <div class="skill-tag">
+                            <span>Django</span>
+                            <div class="skill-progress" data-level="80"></div>
+                        </div>
+                        <div class="skill-tag">
+                            <span>Node.js</span>
+                            <div class="skill-progress" data-level="70"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-category fade-in">
-                    <h3><i class="fas fa-tools"></i> Tools</h3>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Tools</h3>
+                    </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Firebase</span>
-                        <span class="skill-tag">VS Code</span>
+                        <div class="skill-tag">
+                            <span>Git</span>
+                            <div class="skill-progress" data-level="85"></div>
+                        </div>
+                        <div class="skill-tag">
+                            <span>Firebase</span>
+                            <div class="skill-progress" data-level="75"></div>
+                        </div>
+                        <div class="skill-tag">
+                            <span>VS Code</span>
+                            <div class="skill-progress" data-level="90"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-category fade-in">
-                    <h3><i class="fas fa-palette"></i> Other</h3>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-header">
+                        <i class="fas fa-palette"></i>
+                        <h3>Other</h3>
+                    </div>
                     <div class="skill-tags">
-                        <span class="skill-tag">Responsive Design</span>
-                        <span class="skill-tag">UI/UX Basics</span>
-                        <span class="skill-tag">Version Control</span>
+                        <div class="skill-tag">
+                            <span>Responsive Design</span>
+                            <div class="skill-progress" data-level="85"></div>
+                        </div>
+                        <div class="skill-tag">
+                            <span>UI/UX Basics</span>
+                            <div class="skill-progress" data-level="75"></div>
+                        </div>
+                        <div class="skill-tag">
+                            <span>Version Control</span>
+                            <div class="skill-progress" data-level="80"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -140,12 +265,21 @@
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Featured Projects</h2>
-            <p class="section-subtitle fade-in">Here are some of my recent projects that showcase my skills and passion for development.</p>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">My work</span><br>
+                <h2 class="section-title">Featured Projects</h2>
+                
+            </div>
+            <p class="section-description" data-aos="fade-up" data-aos-delay="100">Here are some of my recent projects that showcase my skills and passion for development.</p>
             <div class="projects-grid">
-                <div class="project-card fade-in">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-image">
-                        <i class="fas fa-shopping-cart"></i>
+                        <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="OnShopX">
+                        <div class="project-overlay">
+                            <a href="#" class="project-preview">
+                                <i class="fas fa-expand"></i>
+                            </a>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">OnShopX</h3>
@@ -168,9 +302,14 @@
                     </div>
                 </div>
 
-                <div class="project-card fade-in">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-image">
-                        <i class="fas fa-store"></i>
+                        <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="LeatheredByB">
+                        <div class="project-overlay">
+                            <a href="#" class="project-preview">
+                                <i class="fas fa-expand"></i>
+                            </a>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">LeatheredByB</h3>
@@ -194,15 +333,21 @@
                     </div>
                 </div>
 
-                <div class="project-card fade-in">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="project-image">
-                        <i class="fas fa-tshirt"></i>
+                        <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Drip Plug">
+                        <div class="project-overlay">
+                            <a href="#" class="project-preview">
+                                <i class="fas fa-expand"></i>
+                            </a>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Drip Plug</h3>
                         <p class="project-description">A student-based sportswear shopping platform designed for easy browsing and purchasing of trendy athletic wear.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">HTML</span>
                             <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">CSS</span>
                         </div>
@@ -219,9 +364,12 @@
                     </div>
                 </div>
 
-                <div class="project-card fade-in">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="project-image">
-                        <i class="fas fa-rocket"></i>
+                        <div class="coming-soon">
+                            <i class="fas fa-rocket"></i>
+                            <h3>Coming Soon</h3>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Coming Soon</h3>
@@ -240,25 +388,68 @@
                     </div>
                 </div>
             </div>
+            <div class="section-footer" data-aos="fade-up" data-aos-delay="600">
+                <a href="https://github.com/edwardiyanda1" class="btn btn-outline" target="_blank">
+                    <i class="fab fa-github"></i>
+                    View All Projects
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="section" style="background: var(--bg-light);">
+    <section class="section bg-light">
         <div class="container">
-            <h2 class="section-title fade-in">What People Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Client feedback</span>
+                <br><h2 class="section-title">Testimonials</h2>
+                
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
                     <p class="testimonial-text">"Edward is an exceptional developer with great attention to detail. His ability to solve complex problems and deliver quality solutions is impressive."</p>
-                    <div class="testimonial-author">- Kayode Taiwo</div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Kayode Taiwo">
+                        </div>
+                        <div class="author-info">
+                            <h4>Kayode Taiwo</h4>
+                            <span>Project Manager</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-card fade-in">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
                     <p class="testimonial-text">"Working with Edward has been a great experience. He brings creativity and technical expertise to every project he handles."</p>
-                    <div class="testimonial-author">- Ojo Olayinka</div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ojo Olayinka">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ojo Olayinka</h4>
+                            <span>UX Designer</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="testimonial-card fade-in">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
                     <p class="testimonial-text">"Edward's dedication to learning and improving his craft is remarkable. He's always ready to take on new challenges."</p>
-                    <div class="testimonial-author">- Tunde Jimoh</div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Tunde Jimoh">
+                        </div>
+                        <div class="author-info">
+                            <h4>Tunde Jimoh</h4>
+                            <span>Tech Lead</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -267,33 +458,58 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Get In Touch</h2>
-            <p class="section-subtitle fade-in">I'm always open to discussing new opportunities and interesting projects.</p>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Let's talk</span><br>
+                <h2 class="section-title">Get In Touch</h2>
+                
+            </div>
+            <p class="section-description" data-aos="fade-up" data-aos-delay="100">I'm always open to discussing new opportunities and interesting projects.</p>
             <div class="contact-content">
-                <div class="contact-info fade-in">
+                <div class="contact-info" data-aos="fade-right">
                     <h3>Contact Information</h3>
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:edwardiyanda60@gmail.com">edwardiyanda60@gmail.com</a>
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <span>Email</span>
+                            <a href="mailto:edwardiyanda60@gmail.com">edwardiyanda60@gmail.com</a>
+                        </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:+2348070597436">+234 807 059 7436</a>
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <span>Phone</span>
+                            <a href="tel:+2348070597436">+234 807 059 7436</a>
+                        </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Ibadan, Oyo State, Nigeria</span>
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <span>Location</span>
+                            <span>Ibadan, Oyo State, Nigeria</span>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <a href="https://github.com/edwardiyanda1" target="_blank">github.com/edward-iyanda</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <a href="https://www.linkedin.com/in/edwardiyanda" target="_blank">linkedin.com/in/edwardiyanda</a>
+                    <div class="contact-social">
+                        <h4>Follow Me</h4>
+                        <div class="social-icons">
+                            <a href="https://github.com/edwardiyanda1" target="_blank" class="social-icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/edwardiyanda" target="_blank" class="social-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://twitter.com/" target="_blank" class="social-icon">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <form class="contact-form fade-in" onsubmit="handleSubmit(event)">
+                <form class="contact-form" onsubmit="handleSubmit(event)" data-aos="fade-left">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -310,7 +526,7 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary btn-icon">
                         <i class="fas fa-paper-plane"></i>
                         Send Message
                     </button>
@@ -323,44 +539,55 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-section" data-aos="fade-up">
                     <h3>Edward Iyanda</h3>
                     <p>Software Engineering Student & Developer</p>
                     <p>Building the future, one line of code at a time.</p>
                 </div>
-                <div class="footer-section">
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="100">
                     <h3>Quick Links</h3>
-                    <p><a href="#about" style="color: var(--text-light); text-decoration: none;">About</a></p>
-                    <p><a href="#skills" style="color: var(--text-light); text-decoration: none;">Skills</a></p>
-                    <p><a href="#projects" style="color: var(--text-light); text-decoration: none;">Projects</a></p>
-                    <p><a href="#contact" style="color: var(--text-light); text-decoration: none;">Contact</a></p>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
                 </div>
-                <div class="footer-section">
+                <div class="footer-section" data-aos="fade-up" data-aos-delay="200">
                     <h3>Location</h3>
                     <p>Ibadan, Nigeria</p>
                     <p>From Oyo Town, Oyo State</p>
                     <p>Lead City University</p>
                 </div>
             </div>
-            <div class="social-links">
-                <a href="https://github.com/edwardiyanda1" target="_blank" class="social-link">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/edwardiyanda" target="_blank" class="social-link">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:edwardiyanda60@gmail.com" class="social-link">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="tel:+2348070597436" class="social-link">
-                    <i class="fas fa-phone"></i>
-                </a>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="https://github.com/edwardiyanda1" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/edwardiyanda" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:edwardiyanda60@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+2348070597436" class="social-link">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+                <p>&copy; <span id="year"></span> Edward Iyanda. All Rights Reserved.</p>
             </div>
-            <p>&copy; 2025 Edward Iyanda. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" data-aos="fade-up">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
     <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>
