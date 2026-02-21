@@ -46,17 +46,24 @@ const About = () => {
                 <div className="space-y-10 animate-fadeIn">
                   <div>
                     <div className="flex justify-between items-baseline mb-2">
-                      <h4 className="text-white font-medium text-xl">Freelance Developer</h4>
-                      <span className="text-zinc-500 text-sm">2022 — Present</span>
-                    </div>
-                    <p className="text-zinc-400">Architecting and developing custom web and mobile applications for businesses, focusing on e-commerce and process automation.</p>
-                  </div>
-                  <div>
-                    <div className="flex justify-between items-baseline mb-2">
                       <h4 className="text-white font-medium text-xl">Lead City Voices</h4>
                       <span className="text-zinc-500 text-sm">2026 — Present</span>
                     </div>
                     <p className="text-zinc-400">Developing platform features and managing digital multimedia integration for the university's premier media group.</p>
+                  </div>
+                  <div>
+                    <div className="flex justify-between items-baseline mb-2">
+                      <h4 className="text-white font-medium text-xl">OnShopX</h4>
+                      <span className="text-zinc-500 text-sm">Feb 2025 — Feb 2026</span>
+                    </div>
+                    <p className="text-zinc-400">Architected and developed a full-scale e-commerce platform featuring authenticated flows, responsive design, and dynamic product management.</p>
+                  </div>
+                  <div>
+                    <div className="flex justify-between items-baseline mb-2">
+                      <h4 className="text-white font-medium text-xl">TechBridgers</h4>
+                      <span className="text-zinc-500 text-sm">2022 — 2026</span>
+                    </div>
+                    <p className="text-zinc-400">Engineered custom web and mobile applications for various businesses, focusing on process automation and digital transformation.</p>
                   </div>
                 </div>
               )}
