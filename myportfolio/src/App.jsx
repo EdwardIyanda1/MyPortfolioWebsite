@@ -28,6 +28,7 @@ function App() {
       <Projects />
       <Contact />
       <Footer />
+      <Analytics />
     </div>
   );
 }
